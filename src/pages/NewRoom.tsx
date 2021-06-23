@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import { Button } from '../components/Button';
+import { AuthContext } from '../contexts/AuthContext';
 
 import '../styles/auth.scss';
 
 export function NewRoom() {
+  const { user } = useContext(AuthContext);
 
   return (
     <div id="page-auth">
@@ -27,7 +30,7 @@ export function NewRoom() {
               placeholder="digite o nome da sala"
             />
             <Button type="submit">
-              Criar na sala
+              Criar sala
             </Button>
           </form>
           <p>
